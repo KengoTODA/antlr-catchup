@@ -17,5 +17,4 @@ statement : S V;
 
 S: 'Tomcat';
 
-V: 'runs';
-
+V: ('a'..'z')+;
