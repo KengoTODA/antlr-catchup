@@ -1,10 +1,8 @@
 package jp.skypencil.antlr;
 
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-
-import java.util.Map;
-
 import jp.skypencil.antlr.StatementParser.statement_return;
 
 import org.antlr.runtime.ANTLRStringStream;
@@ -30,8 +28,8 @@ public class StatementWalkerTest {
 		treeNodeStream.setTokenStream(tokens);
 
 		StatementWalker walker = new StatementWalker(treeNodeStream);
-		Map<String, String> map = walker.statement();
-		assertThat(map.get("S"), is(equalTo("Tomcat")));
-		assertThat(map.get("V"), is(equalTo("runs")));
+		Statement st = walker.statement();
+		assertThat(st.getS(), is(equalTo("Tomcat")));
+		assertThat(st.getV(), is(equalTo("runs")));
 	}
 }
