@@ -3,12 +3,7 @@ tree grammar StatementWalker;
 options
 {
 	ASTLabelType = CommonTree ;
-}
-
-tokens
-{
-	S = 'Tomcat';
-	V = 'runs';
+	tokenVocab = Statement;
 }
 
 @header
@@ -22,5 +17,3 @@ statement returns [Statement st = new Statement();]
 		$st.setS(s.getText());
 		$st.setV(v.getText());
 	};
-
-	
