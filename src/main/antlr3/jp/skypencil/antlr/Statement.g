@@ -15,6 +15,6 @@ package jp.skypencil.antlr;
 
 statement : S V;
 
-S: 'Tomcat';
+S: ('A'..'Z') ('a'..'z')+;
 
 V: ('a'..'z')+;
